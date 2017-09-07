@@ -17,7 +17,7 @@ var  images  = require('./routes/images');
 
 var router = express.Router();
 var app = express();
-var port = 3000;
+var port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
