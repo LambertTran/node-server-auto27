@@ -15,5 +15,5 @@ var ImagePathSchema = new Schema({
   paths:[]
 })
 
-var ImagePath = mongoose.model('path',ImagePathSchema); 
+var ImagePath = mongoose.model('cars',ImagePathSchema); 
 module.exports = {ImagePath}
