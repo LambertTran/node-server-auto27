@@ -3,7 +3,7 @@
 **==================================*/
 
 const mongoose  = require('mongoose');
-var {ImagePath} = require('../models/image-path');
+var {CarData} = require('../../models/cars');
 
 /** =================================
                 Body
@@ -16,8 +16,14 @@ mongoose.connect(URL,['cars']);
 /** store paths of images and title to database */
 var storeCarData = function(req){
   var urls = req.files.map((file) => file.location);
-  var path = new ImagePath({
-    "title":req.body.title,
+
+  var path = new CarData({
+    "name":req.body.name,
+    "year":req.body.year,
+    "status":req.body.status,
+    "odometer":req.body.odometer,
+    "transmission":req.body.odometer,
+    "description":req.body.description,
     "paths":urls
   })
 

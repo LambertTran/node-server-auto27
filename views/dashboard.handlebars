@@ -1,0 +1,13 @@
+<h1>DashBoard</h1>
+<button type="submit" class="btn btn-success">
+  <a href='/admin/upload'>Upload </a>
+</button>
+
+<div>
+  {{#each cars}}
+    <div>
+      <h3>{{this.name}} - {{this.year}}</h3>
+      <a href="/admin/delete" data-method="delete">Delete</a>
+    </div>
+  {{/each}}
+</div>

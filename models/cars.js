@@ -9,11 +9,26 @@ const Schema = mongoose.Schema;
 **==================================*/
 /** define model of paths of images in database */
 var ImagePathSchema = new Schema({
-  title:{
+  name:{
+    type:String
+  },
+  year:{
+    type:Number
+  },
+  status:{
+    type:String
+  },
+  odometer:{
+    type:Number
+  },
+  transmission:{
+    type:String
+  },
+  description:{
     type:String
   },
   paths:[]
 })
 
-var ImagePath = mongoose.model('cars',ImagePathSchema); 
-module.exports = {ImagePath}
+var CarData = mongoose.model('cars',ImagePathSchema); 
+module.exports = {CarData}
