@@ -1,0 +1,20 @@
+$body-bg: #CCFFCC;
+
+$car-item-bg: #C6C8CA;
+
+body{
+  background-color:$body-bg;
+}
+
+.nav{
+  background-color:red;
+}
+
+.car-item{
+  height: 200px;
+  width: 500px;
+  background-color: $car-item-bg;
+  border-style:solid;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

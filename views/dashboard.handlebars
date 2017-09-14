@@ -5,9 +5,17 @@
 
 <div>
   {{#each cars}}
-    <div>
-      <h3>{{this.name}} - {{this.year}}</h3>
-      <a href="/admin/delete" data-method="delete">Delete</a>
-    </div>
+      <div class="car-item">
+        <div>
+          <h3>{{this.name}} - {{this.year}}</h3>
+          <h4>{{this.id}}</h4>
+          <form action="/admin/delete/{{this.id}}" method="post">
+            <button type="submit" class="btn btn-danger">
+              Delete
+            </button>
+            
+          </form>
+        </div>
+      </div>
   {{/each}}
 </div>

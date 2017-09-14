@@ -1,0 +1,15 @@
+body {
+  background-color: #CCFFCC; }
+
+.nav {
+  background-color: red; }
+
+.car-item {
+  height: 200px;
+  width: 500px;
+  background-color: #C6C8CA;
+  border-style: solid;
+  margin-bottom: 10px;
+  margin-top: 10px; }
+
+/*# sourceMappingURL=style.css.map */

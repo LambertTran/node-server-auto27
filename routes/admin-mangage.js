@@ -10,6 +10,7 @@ var verifyAuth = require ('./middleware/verify-auth');
 
 var storeCarData = require('./middleware/store-car-data')
 var getCarsData = require('./middleware/get-cars-data')
+var deleteCar = require('./middleware/delete-car-data')
 
 
 /** =================================
@@ -21,7 +22,6 @@ var getCarsData = require('./middleware/get-cars-data')
 
 router.get('/', verifyAuth ,(req,res) => {
   getCarsData().then((cars) => {
-    console.log(cars)
     res.render('dashboard',{cars:cars});
   })
 })
@@ -36,6 +36,13 @@ router.post('/upload', verifyAuth , upload.array('img'), (req, res) => {
       res.status(200).redirect('/admin')
     })
     .catch((err) => res.status(400).send('cant uploaded'))
+});
+
+router.post('/delete/:id',verifyAuth, (req,res) => {
+  var id = req.params.id;
+  deleteCar(id)
+    .then(() => res.status(200).redirect('/admin'))
+    .catch((err) => res.status(400).redirect('/admin'));
 });
 
 

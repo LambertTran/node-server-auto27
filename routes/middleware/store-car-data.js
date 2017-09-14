@@ -22,7 +22,7 @@ var storeCarData = function(req){
     "year":req.body.year,
     "status":req.body.status,
     "odometer":req.body.odometer,
-    "transmission":req.body.odometer,
+    "transmission":req.body.transmission,
     "description":req.body.description,
     "paths":urls
   })
