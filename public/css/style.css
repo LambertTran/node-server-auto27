@@ -1,15 +1,101 @@
-body {
+/*** color scheme ***/
+/** login **/
+/** nav **/
+/** content **/
+html, body {
+  height: 100%;
   background-color: #CCFFCC; }
 
-.nav {
-  background-color: red; }
+.login {
+  height: 700px;
+  width: 400px;
+  position: absolute;
+  left: 50px;
+  background-color: #0099CC;
+  padding: 20px;
+  padding-top: 50px;
+  border-radius: 15px 50px; }
+  .login h2 {
+    text-align: center; }
+  .login label {
+    font-size: 30px;
+    color: white; }
+  .login .button {
+    text-align: center; }
+  @media screen and (min-width: 767px) {
+    .login {
+      left: 1%; } }
+  @media screen and (min-width: 1200px) {
+    .login {
+      left: 23%; } }
+
+.navigator {
+  z-index: 100;
+  position: fixed;
+  background-color: #003399;
+  padding: 0 !important;
+  margin: 0 !important; }
+  .navigator ul {
+    width: 100%;
+    margin: 0;
+    margin: 20px 0 20px 0;
+    -webkit-padding-start: 0;
+    list-style-type: none; }
+    .navigator ul li {
+      display: inline;
+      width: 100%;
+      padding: 10px;
+      text-align: center; }
+      .navigator ul li a {
+        color: #CCFFCC;
+        font-size: 20px; }
+      .navigator ul li:hover {
+        background-color: green; }
+        .navigator ul li:hover a {
+          color: black;
+          text-decoration: none; }
+  @media screen and (min-width: 767px) {
+    .navigator {
+      height: 100vh; }
+      .navigator ul {
+        padding-top: 40px; }
+        .navigator ul li {
+          margin-bottom: 30px;
+          padding: 5px; }
+          .navigator ul li a {
+            font-size: 30px; } }
+  @media screen and (min-width: 1200px) {
+    .navigator ul {
+      padding-top: 60px; }
+      .navigator ul li a {
+        font-size: 20px; } }
+
+.content {
+  top: 100px; }
+  .content hr {
+    margin-bottom: 30px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2); }
+  @media screen and (min-width: 767px) {
+    .content {
+      top: 30px; } }
 
 .car-item {
-  height: 200px;
-  width: 500px;
-  background-color: #C6C8CA;
+  height: 100%;
+  width: 100%;
+  background-color: #0099CC;
   border-style: solid;
+  border-radius: 15px 50px 30px 5px;
   margin-bottom: 10px;
-  margin-top: 10px; }
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center; }
+  .car-item img {
+    max-width: 100%;
+    width: 350px;
+    height: 250px;
+    margin-bottom: 20px; }
+  @media screen and (min-width: 767px) {
+    .car-item h3 {
+      margin: 30px 0 30px 0; } }
 
 /*# sourceMappingURL=style.css.map */

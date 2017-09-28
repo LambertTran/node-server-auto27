@@ -1,21 +1,29 @@
 <h1>DashBoard</h1>
-<button type="submit" class="btn btn-success">
-  <a href='/admin/upload'>Upload </a>
-</button>
-
+<hr/>
 <div>
   {{#each cars}}
       <div class="car-item">
-        <div>
-          <h3>{{this.name}} - {{this.year}}</h3>
-          <h4>{{this.id}}</h4>
-          <form action="/admin/delete/{{this.id}}" method="post">
-            <button type="submit" class="btn btn-danger">
-              Delete
-            </button>
-            
-          </form>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <img src="{{this.paths.[1]}}">
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col-6 col-md-12">
+                <h3>{{this.name}} - {{this.year}}</h3>
+              </div>
+              <div class="col-6 col-md-12">
+                <form action="/admin/delete/{{this.id}}" method="post">
+                  <button type="submit" class="btn btn-danger btn-lg">
+                    Delete
+                  </button>
+                  
+                </form>
+                
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+        </div>
   {{/each}}
 </div>

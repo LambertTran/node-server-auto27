@@ -1,20 +1,56 @@
+/*** color scheme ***/
 $body-bg: #CCFFCC;
 
-$car-item-bg: #C6C8CA;
+/** login **/
+$login-bg:#0099CC;
 
-body{
+/** nav **/
+$nav-bg: #003399;
+$nav-item-hover: green;
+
+/** content **/
+$car-item-bg: #0099CC;
+
+html,body{
+  height:100%;
   background-color:$body-bg;
 }
 
-.nav{
-  background-color:red;
+@import "login";
+@import "navbar";
+ 
+
+
+.content{
+  top:100px;
+  hr{
+    margin-bottom:30px;
+    border-top: 2px solid rgba(0,0,0,0.2);
+  }
+  @media screen and (min-width:767px){
+    top:30px;
+  }
 }
 
 .car-item{
-  height: 200px;
-  width: 500px;
+  height: 100%;
+  width: 100%;
   background-color: $car-item-bg;
   border-style:solid;
+  border-radius: 15px 50px 30px 5px;
   margin-bottom: 10px;
   margin-top: 10px;
+  padding: 20px;
+  text-align:center;
+  img{
+    max-width:100%;
+    width:350px;
+    height:250px;
+    margin-bottom:20px;
+  }
+  @media screen and (min-width:767px){
+    h3{
+      margin: 30px 0 30px 0;
+    }
+  }
 }
