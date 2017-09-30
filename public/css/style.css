@@ -7,8 +7,8 @@ html, body {
   background-color: #CCFFCC; }
 
 .login {
-  height: 700px;
-  width: 400px;
+  height: 85%;
+  width: 80%;
   position: absolute;
   margin: auto;
   top: 0;
@@ -18,7 +18,8 @@ html, body {
   background-color: #0099CC;
   padding: 20px;
   padding-top: 50px;
-  border-radius: 15px 50px; }
+  border-radius: 15px 50px;
+  font-size: 0.5em; }
   .login h2 {
     text-align: center; }
   .login label {
@@ -26,6 +27,10 @@ html, body {
     color: white; }
   .login .button {
     text-align: center; }
+  @media (min-width: 767px) {
+    .login {
+      height: 700px;
+      width: 400px; } }
 
 .navigator {
   z-index: 100;

@@ -1,6 +1,6 @@
 .login{
-  height:700px;
-  width:400px;
+  height:85%;
+  width:80%;
   position:absolute;
   margin:auto;
   top:0;
@@ -11,6 +11,7 @@
   padding: 20px;
   padding-top:50px;
   border-radius: 15px 50px;
+  font-size:0.5em;
   h2{
     text-align:center;
   }
@@ -21,8 +22,9 @@
   .button{
     text-align:center;
   }
-  @media screen and (min-width: 767px){
-
+  @media (min-width: 767px){
+    height: 700px;
+    width:400px;
   }
   @media screen and (min-width: 1200px){
 
