@@ -7,8 +7,8 @@
 </head>
 <body>
   <div class="container-fluid">
-      <div class="row">
-        {{#if user}}
+      {{#if user}}
+        <div class="row">
           <div class="col-12 col-md-3 col-lg-2 navigator">
             <ul class="row">
               <li class="col-4 col-md-12">
@@ -22,10 +22,14 @@
               </li>
             </ul>
           </div>
-        {{/if}}          
         <div class="col-12 col-md-9 col-lg-10 ml-md-auto content">
           {{{body}}}
         </div>
+        {{else}}
+        <div class="login">
+          {{{body}}}
+        </div>
+        {{/if}}          
       </div>
     </div>
 </body>

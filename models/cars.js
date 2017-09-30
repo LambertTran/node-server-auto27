@@ -12,6 +12,9 @@ var ImagePathSchema = new Schema({
   name:{
     type:String
   },
+  price:{
+    type:Number
+  },
   year:{
     type:Number
   },

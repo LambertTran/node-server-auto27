@@ -10,7 +10,11 @@ html, body {
   height: 700px;
   width: 400px;
   position: absolute;
-  left: 50px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background-color: #0099CC;
   padding: 20px;
   padding-top: 50px;
@@ -22,12 +26,6 @@ html, body {
     color: white; }
   .login .button {
     text-align: center; }
-  @media screen and (min-width: 767px) {
-    .login {
-      left: 1%; } }
-  @media screen and (min-width: 1200px) {
-    .login {
-      left: 23%; } }
 
 .navigator {
   z-index: 100;
@@ -50,7 +48,7 @@ html, body {
         color: #CCFFCC;
         font-size: 20px; }
       .navigator ul li:hover {
-        background-color: green; }
+        background-color: #CCFFCC; }
         .navigator ul li:hover a {
           color: black;
           text-decoration: none; }
@@ -97,5 +95,10 @@ html, body {
   @media screen and (min-width: 767px) {
     .car-item h3 {
       margin: 30px 0 30px 0; } }
+
+.upload-form {
+  height: 100%;
+  width: 50%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */

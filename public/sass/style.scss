@@ -6,7 +6,7 @@ $login-bg:#0099CC;
 
 /** nav **/
 $nav-bg: #003399;
-$nav-item-hover: green;
+$nav-item-hover: #CCFFCC;
 
 /** content **/
 $car-item-bg: #0099CC;
@@ -53,4 +53,10 @@ html,body{
       margin: 30px 0 30px 0;
     }
   }
+}
+
+.upload-form{
+  height:100%;
+  width:50%;
+  margin: 0 auto;
 }
