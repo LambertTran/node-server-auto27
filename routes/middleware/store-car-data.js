@@ -20,6 +20,7 @@ var storeCarData = function(req){
   var path = new CarData({
     "name":req.body.name,
     "year":req.body.year,
+    "price":req.body.price,
     "status":req.body.status,
     "odometer":req.body.odometer,
     "transmission":req.body.transmission,
