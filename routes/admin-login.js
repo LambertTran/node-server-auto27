@@ -22,7 +22,11 @@ mongoose.connect(URL,['admin']);
 
 /** log in **/
 router.get('/',(req,res) => {
-  res.render('login')
+  if(req.user === undefined){
+    res.render('login');
+  } else {
+    res.redirect('/admin')
+  }
 })
 
 // authenticate user

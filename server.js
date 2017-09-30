@@ -49,9 +49,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
-    resave: true
+    resave: false
 }));
-
 
 // Passport init
 app.use(passport.initialize());

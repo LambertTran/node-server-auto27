@@ -10,24 +10,23 @@
       <div class="row">
         {{#if user}}
           <div class="col-12 col-md-3 col-lg-2 navigator">
-              <ul class="row">
-                <li class="col-4 col-md-12">
-                  <a href="/admin/">DashBoard</a>
-                </li>
-                <li class="col-4 col-md-12">
-                  <a href="/admin/upload">Upload new car</a>
-                </li>
-                <li class="col-4 col-md-12">
-                  <a href="/logout">Logout</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="row">
+              <li class="col-4 col-md-12">
+                <a href="/admin/">DashBoard</a>
+              </li>
+              <li class="col-4 col-md-12">
+                <a href="/admin/upload">Upload new car</a>
+              </li>
+              <li class="col-4 col-md-12">
+                <a href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
         {{/if}}          
         <div class="col-12 col-md-9 col-lg-10 ml-md-auto content">
           {{{body}}}
         </div>
-
-        
       </div>
+    </div>
 </body>
 </html>
