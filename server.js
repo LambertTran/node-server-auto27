@@ -21,7 +21,7 @@ var bodyParser   = require('body-parser');
 var carsData  = require('./routes/cars-data'); 
 var adminLogin = require('./routes/admin-login');
 var adminMangage = require('./routes/admin-mangage');
-
+var sendEmail = require('./routes/send-email');
 
 
 /** =================================
@@ -91,6 +91,7 @@ app.use(function (req, res, next) {
 
 app.use('/',adminLogin);
 app.use('/api',carsData);
+app.use('/api/test',sendEmail);
 app.use('/admin',adminMangage);
 
 app.listen(port, () => console.log(`connect to ${port}`));
