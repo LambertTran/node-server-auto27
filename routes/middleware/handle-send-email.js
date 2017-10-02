@@ -17,12 +17,7 @@ var handleSendEmail = (message) =>{
       text: message
     }
     
-    transporter.sendMail(mailOptions,(err,info) => {
-      if(err){
-        return console.log(err);
-      }
-      console.log("sent it")
-    })
+    return transporter.sendMail(mailOptions).then(() => {return Promise.resolve()})
 }
 
 module.exports = handleSendEmail;
