@@ -19,7 +19,9 @@ router.post('/sendemail',(req,res) => {
   let message = "name: "    + input.name.toString() + "\n" +
                 "email: "   + input.email.toString() + "\n" + 
                 "message: " + input.message.toString() + "\n"; 
-  handleSendEmail(message);    
+  handleSendEmail(message)
+    .then(() => res.send("sent your email"))
+    .catch((err) => res.send("could send your email") );    
 })
 
 
