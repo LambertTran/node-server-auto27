@@ -5,12 +5,12 @@
 const express = require('express');
 const router  = express.Router();
 
-var upload = require('./storages/upload-aws');
-var verifyAuth = require ('./middleware/verify-auth');
+var upload = require('../storages/upload-aws');
+var verifyAuth = require ('../middleware/verify-auth');
 
-var storeCarData = require('./middleware/store-car-data')
-var getCarsData = require('./middleware/get-cars-data')
-var deleteCar = require('./middleware/delete-car-data')
+var storeCarData = require('../middleware/store-car-data')
+var getCarsData = require('../middleware/get-cars-data')
+var deleteCar = require('../middleware/delete-car-data')
 
 
 /** =================================

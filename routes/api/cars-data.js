@@ -7,7 +7,7 @@ const express = require('express');
 const router  = express.Router();
 
 
-var getCarsData = require('./middleware/get-cars-data')
+var getCarsData = require('../middleware/get-cars-data')
 
 /** =================================
                 Body

@@ -18,10 +18,12 @@ var bodyParser   = require('body-parser');
 
 
 /** import routers */
-var carsData  = require('./routes/cars-data'); 
-var adminLogin = require('./routes/admin-login');
-var adminMangage = require('./routes/admin-mangage');
-var sendEmail = require('./routes/send-email');
+// API request
+var carsData  = require('./routes/api/cars-data'); 
+var sendEmail = require('./routes/api/send-email');
+// Admin
+var adminLogin = require('./routes/admin/login');
+var adminMangage = require('./routes/admin/manager');
 
 
 /** =================================
@@ -77,8 +79,6 @@ app.use(expressValidator({
 // connect flash
 app.use(flash());
 
-
-
 // global variable
 app.use(function (req, res, next) {
   res.locals.success_msg = req.flash('success_msg');
@@ -91,7 +91,7 @@ app.use(function (req, res, next) {
 
 app.use('/',adminLogin);
 app.use('/api',carsData);
-app.use('/api/test',sendEmail);
+app.use('/api',sendEmail);
 app.use('/admin',adminMangage);
 
 app.listen(port, () => console.log(`connect to ${port}`));

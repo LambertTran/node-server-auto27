@@ -10,7 +10,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 
-var Admin = require('../models/admin');
+var Admin = require('../../models/admin');
 
 
 const URL= 'mongodb://alirom93:Lamson123@ds127443.mlab.com:27443/todo_list';
