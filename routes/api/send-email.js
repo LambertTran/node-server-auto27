@@ -20,8 +20,8 @@ router.post('/sendemail',(req,res) => {
                 "email: "   + input.email.toString() + "\n" + 
                 "message: " + input.message.toString() + "\n"; 
   handleSendEmail(message)
-    .then(() => res.send("sent your email"))
-    .catch((err) => res.send("could send your email") );    
+    .then(() => res.status(200).send("sent your email"))
+    .catch((err) => res.status(400).send("could send your email") );    
 })
 
 
