@@ -19,8 +19,6 @@ html,body{
 @import "login";
 @import "navbar";
  
-
-
 .content{
   top:100px;
   hr{
@@ -57,6 +55,16 @@ html,body{
 
 .upload-form{
   height:100%;
-  width:50%;
+  width:90%;
   margin: 0 auto;
+  textarea{
+    white-space: pre;
+    height:300px;
+  }
+  .text-area{
+    height:300px;
+  }
+  @media screen and (min-width:767px){
+    width:60%;
+  }
 }
