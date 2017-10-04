@@ -10,7 +10,7 @@ var {CarData} = require('../../models/cars');
 **==================================*/
 /** database **/
 mongoose.Promise = global.Promise;
-const URL= 'mongodb://alirom93:Lamson123@ds127443.mlab.com:27443/todo_list';
+const URL= "mongodb://auto27:password@ds141098.mlab.com:41098/car-dealer-database";
 mongoose.connect(URL,['cars']);
 
 /** store paths of images and title to database */

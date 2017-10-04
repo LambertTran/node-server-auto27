@@ -5,7 +5,6 @@
 const express = require('express');
 const path    = require('path');
 const cors    = require('cors');
-var mongoose  = require('mongoose');
 
 var passport         = require('passport');
 var expressValidator = require('express-validator');
