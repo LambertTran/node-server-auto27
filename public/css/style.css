@@ -41,7 +41,7 @@ html, body {
   .navigator ul {
     width: 100%;
     margin: 0;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 0px 0;
     -webkit-padding-start: 0;
     list-style-type: none; }
     .navigator ul li {
@@ -103,7 +103,15 @@ html, body {
 
 .upload-form {
   height: 100%;
-  width: 50%;
+  width: 90%;
   margin: 0 auto; }
+  .upload-form textarea {
+    white-space: pre;
+    height: 300px; }
+  .upload-form .text-area {
+    height: 300px; }
+  @media screen and (min-width: 767px) {
+    .upload-form {
+      width: 60%; } }
 
 /*# sourceMappingURL=style.css.map */
