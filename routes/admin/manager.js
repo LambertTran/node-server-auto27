@@ -14,6 +14,8 @@ var storeCustomerImages = require('../middleware/store-customer-images');
 var getCarsData = require('../middleware/get-cars-data');
 var deleteCar = require('../middleware/delete-car-data');
 
+/** Customer **/
+var getCustomerImages = require('../middleware/get-customer-images');
 
 /** =================================
                 Body
@@ -25,6 +27,14 @@ router.get('/', verifyAuth ,(req,res) => {
     res.render('dashboard',{cars:cars});
   })
 })
+
+
+/** customer iamges **/
+router.get('/customeriamges',verifyAuth,(req,res) => {
+  getCustomerImages().then(customers => {
+    res.render('customerimages',{customers:customers});
+  });
+});
 
 /** upload cars data **/
 router.get('/upload',verifyAuth,(req,res) => {

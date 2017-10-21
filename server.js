@@ -20,6 +20,7 @@ var bodyParser   = require('body-parser');
 // API request
 var carsData  = require('./routes/api/cars-data'); 
 var sendEmail = require('./routes/api/send-email');
+var customerImages = require('./routes/api/customer-images');
 // Admin
 var adminLogin = require('./routes/admin/login');
 var adminMangage = require('./routes/admin/manager');
@@ -91,6 +92,7 @@ app.use(function (req, res, next) {
 app.use('/',adminLogin);
 app.use('/api',carsData);
 app.use('/api',sendEmail);
+app.use('/api',customerImages);
 app.use('/admin',adminMangage);
 
 app.listen(port, () => console.log(`connect to ${port}`));
