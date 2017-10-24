@@ -16,7 +16,7 @@ var deleteCar = require('../middleware/delete-car-data');
 
 /** Customer **/
 var getCustomerImages = require('../middleware/get-customer-images');
-
+var deleteCustomerImage= require('../middleware/delete-customer-image');
 /** =================================
                 Body
 **==================================*/
@@ -29,12 +29,6 @@ router.get('/', verifyAuth ,(req,res) => {
 })
 
 
-/** customer iamges **/
-router.get('/customeriamges',verifyAuth,(req,res) => {
-  getCustomerImages().then(customers => {
-    res.render('customerimages',{customers:customers});
-  });
-});
 
 /** upload cars data **/
 router.get('/upload',verifyAuth,(req,res) => {
@@ -49,6 +43,12 @@ router.post('/upload', verifyAuth , upload.array('img'), (req, res) => {
     .catch((err) => res.status(400).send('cant uploaded'));
 });
 
+/** customer iamges **/
+router.get('/customerimages',verifyAuth,(req,res) => {
+  getCustomerImages().then(customers => {
+    res.render('customerimages',{customers:customers});
+  });
+});
 
 /** upload customer images **/
 router.get('/customers', verifyAuth, (req,res) => {
@@ -58,13 +58,13 @@ router.get('/customers', verifyAuth, (req,res) => {
 router.post('/customers', verifyAuth , uploadCustomer.array('img'), (req, res) => {
   storeCustomerImages(req)
     .then(() => {
-      res.status(200).redirect('/admin')
+      res.status(200).redirect('/admin/customerimages')
     })
     .catch((err) => res.status(400).send('cant uploaded'));
 });
 
 
-/** log out **/
+/** delete route **/
 router.post('/delete/:id',verifyAuth, (req,res) => {
   var id = req.params.id;
   deleteCar(id)
@@ -72,5 +72,11 @@ router.post('/delete/:id',verifyAuth, (req,res) => {
     .catch((err) => res.status(400).redirect('/admin'));
 });
 
+router.post('/delete/customer/:id',verifyAuth,(req,res) => {
+  var id = req.params.id;
+  deleteCustomerImage(id)
+    .then(() => res.status(200).redirect('/admin/customerimages'))
+    .catch((err) => res.status(400).redirect('/admin/customerimages'));
+})
 
 module.exports= router;
