@@ -5,15 +5,15 @@ var handleSendEmail = (message) =>{
       service:'gmail',
       host:'smtp.gmail.com',
       auth:{
-        user:'dev.email.lbt@gmail.com',
-        pass:'webdev123'
+        user:'auto27sacramento@gmail.com',
+        pass:'cocopolo'
       }
     });
 
     let mailOptions = {
       from:"car-dealer",
-      to: "lb.tran648@gmail.com",
-      subject:"Someone needs you",
+      to: "auto27sacramento@gmail.com",
+      subject:"Customer Contact",
       text: message
     }
     
