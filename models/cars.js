@@ -22,7 +22,7 @@ var ImagePathSchema = new Schema({
     type:String
   },
   odometer:{
-    type:Number
+    type:String
   },
   transmission:{
     type:String
