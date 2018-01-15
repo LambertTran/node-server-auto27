@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
+var auto27Db = require('../db/auto27');
 
 var AdminSchema = mongoose.Schema({
   username:{
@@ -12,19 +13,22 @@ var AdminSchema = mongoose.Schema({
   }
 });
 
-var Admin =module.exports= mongoose.model('admin',AdminSchema);
 
-module.exports.validateAdmin = (username,callback) => {
+AdminSchema.statics.validateAdmin = (username,callback) => {
   Admin.findOne({username:username},callback);  
 }
 
-module.exports.validatePassword = (password,adminPass,callback) => {
+AdminSchema.statics.validatePassword = (password,adminPass,callback) => {
   bcrypt.compare(password, adminPass, function(err, isMatch) {
-      if(err) throw err;
-      callback(null, isMatch);
+    if(err) throw err;
+    callback(null, isMatch);
   });
 }
 
-module.exports.getAdminById = (id,callback) => {
+AdminSchema.statics.getAdminById = (id,callback) => {
   Admin.findById(id,callback);
 }
+
+var Admin = auto27Db.model('admins',AdminSchema);
+
+module.exports = Admin;

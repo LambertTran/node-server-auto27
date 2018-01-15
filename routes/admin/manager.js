@@ -5,28 +5,41 @@
 const express = require('express');
 const router  = express.Router();
 
-var {upload} = require('../storages/upload-aws');
-var {uploadCustomer} = require('../storages/upload-aws');
+var {upload} = require('../../aws/upload-aws');
+var {uploadCustomer} = require('../../aws/upload-aws');
 var verifyAuth = require ('../middleware/verify-auth');
 
+// Admin
+var createNewAdmin = require('../middleware/create-admin');
+// Car
 var storeCarData = require('../middleware/store-car-data');
 var storeCustomerImages = require('../middleware/store-customer-images');
 var getCarsData = require('../middleware/get-cars-data');
 var deleteCar = require('../middleware/delete-car-data');
 
-/** Customer **/
+// Customer
 var getCustomerImages = require('../middleware/get-customer-images');
 var deleteCustomerImage= require('../middleware/delete-customer-image');
+
 /** =================================
                 Body
 **==================================*/
 
 /** dashboard **/
 router.get('/', verifyAuth ,(req,res) => {
-  getCarsData().then((cars) => {
+  getCarsData()
+  .then((cars) => {
     res.render('dashboard',{cars:cars});
   })
+  .catch((err) => {
+    res.status(404).send(err);
+  })
 })
+
+/** create new admin */
+// router.post('/', (req,res) => {
+//   createNewAdmin();
+// })
 
 
 
@@ -45,9 +58,13 @@ router.post('/upload', verifyAuth , upload.array('img'), (req, res) => {
 
 /** customer iamges **/
 router.get('/customerimages',verifyAuth,(req,res) => {
-  getCustomerImages().then(customers => {
+  getCustomerImages()
+    .then(customers => {
     res.render('customerimages',{customers:customers});
-  });
+    })
+    .catch((err) => {
+      res.status(404).send(err);
+    })
 });
 
 /** upload customer images **/

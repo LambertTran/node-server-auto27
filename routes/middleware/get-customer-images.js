@@ -11,8 +11,6 @@ var {CustomerImages} = require('../../models/customer');
 
 /** database **/
 mongoose.Promise = global.Promise;
-const URL= "mongodb://auto27:password@ds141098.mlab.com:41098/car-dealer-database";
-mongoose.connect(URL,['customers']);
 
 var getCustomerImages = () => {
   return CustomerImages.find()

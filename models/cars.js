@@ -3,6 +3,7 @@
 **==================================*/
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+var auto27Db = require('../db/auto27');
 
 /** =================================
                 Body
@@ -33,5 +34,5 @@ var ImagePathSchema = new Schema({
   paths:[]
 })
 
-var CarData = mongoose.model('cars',ImagePathSchema); 
+var CarData = auto27Db.model('cars',ImagePathSchema); 
 module.exports = {CarData}
